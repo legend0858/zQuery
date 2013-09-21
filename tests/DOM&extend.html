@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>无标题文档</title>
+<script src="zQuery_0.4.js"></script>
+<script type="text/javascript">
+$(function () {
+    var $insert1 = $("<li class='new'>我是新来的，请多关照111</li><li class='new'>我是新来的，请多关照222</li>");
+    $insert1.insertAfter("div ol .list1");
+
+    var $insert2 = $("<ul><li>我是一个新的ul列表</li></ul><ol><li>我是一个新的ol列表</li></ol>");
+    $insert2.prependTo("div");
+
+    alert($("div").length);
+    alert($("div ol .list1").length);
+
+    //alert($(".list2").index());
+    $.fn.extend({
+        "toRed":function() {
+            for(var i=0; i<this.elements.length; i++) {
+                this.elements[i].style.backgroundColor = "red";
+            }
+        }
+    })
+
+    /*$.fn.toRed = function () {
+        for(var i=0; i<this.elements.length; i++) {
+            this.elements[i].style.backgroundColor = "red";
+        }
+    }*/
+
+    $(".list2").toRed();
+
+})
+</script>
+</head>
+<body>
+<div id="div1">
+    <ul>
+        <li class="list">我是ul的li，class是list</li>
+        <!--注释节点--><!--注释节点--><!--注释节点--><!--注释节点-->
+        <li class="list1">我是ul的li，class是list1</li>
+        <li class="list2">我是ul的li，class是list2</li>
+    </ul>
+    <ol>
+        <li class="list1">我是ol的li，class是list1</li>
+        <li class="list">我是ol的li，class是list</li>
+        <li class="list box">我是ol的li，class是list box</li>
+        <li class="box list">我是ol的li，class是box list</li>
+    </ol>
+</div>
+<div id="div2">
+    <ul>
+        <li class="list">我是ul的li，class是list</li>
+        <li class="list1">我是ul的li，class是list1</li>
+        <li class="list2">我是ul的li，class是list2</li>
+    </ul>
+    <ol>
+        <li class="list">我是ol的li，class是list</li>
+        <li class="list1">我是ol的li，class是list1</li>
+        <li class="list box">我是ol的li，class是list box</li>
+        <li class="box list1">我是ol的li，class是box list1</li>
+    </ol>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>jsonp</title>
+<style>
+* {padding:0; margin:0;}
+ul {list-style:none;}
+
+#frm1 {width:350px; margin:30px auto; position:relative;}
+#kw {width:303px; height:30px; font:14px/30px "宋体";}
+#kwList {position:absolute; top:32px; left:0; border:1px solid #CCC;}
+#kwList li {width:300px; height:30px; font:14px/30px "宋体"; padding-left:5px;}
+#kwList li.active {background-color:#EEE;}
+</style>
+</head>
+<body>
+<form id="frm1">
+    <input type="text" id="kw" name="kw" />
+    <ul id="kwList"></ul>
+</form>
+<script src="../zQuery_0.4.js"></script>
+<script>
+$(function() {
+    var oInput = document.getElementById("kw");
+    var oUl = document.getElementById("kwList");
+
+    function insert(json) {
+        oUl.innerHTML = "";
+        for(var i=0; i<json.s.length; i++) {
+            var oLi = document.createElement("li");
+            oLi.innerHTML = json.s[i];
+            oUl.appendChild(oLi);
+        }
+        console.log(json);
+    }
+
+    oInput.onkeyup = function () {
+        $.jsonp("http://suggestion.baidu.com/su",{
+            "wd":oInput.value
+        },insert,"cb");
+    }
+
+
+})
+</script>
+</body>
+</html>

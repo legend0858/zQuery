@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>动画效果</title>
+<style>
+div {width:100px; height:100px; background:#CCC; position:absolute; left:30px;}
+#div1 {top:30px;}
+#div2 {top:180px;}
+</style>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+<!--<script type="text/javascript" src="../jquery-1.7.2.js"></script>-->
+<script type="text/javascript" src="../zQuery_0.4.js"></script>
+<script>
+$(function () {
+    $("div").animate({"left":400,"top":400,"opacity":0},1000);
+})
+</script>
+</body>
+</html>

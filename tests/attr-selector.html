@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>属性选择器</title>
+<script type="text/javascript" src="../zQuery_0.4.js"></script>
+<script>
+$(function () {
+    var aEle = $("input#btn1");
+    aEle.css("border","2px solid red");
+    console.log(aEle);
+})
+</script>
+</head>
+<body>
+<input type="text" name="txt" value="" />
+<input type="button" name="btn" id="btn1" value="按钮1" data="dd" />
+<input type="button" name="btn" id="btn2"  value="按钮1" data="dddd" />
+<input type="button" name="btn" id="btn3"  value="按钮1" data_abc="de" />
+<input type="button" name="btn" value="按钮1" />
+<input type="submit" name="btn" value="按钮2" data_abc="de12" />
+<input type="reset" name="btn" value="按钮3" />
+</body>
+</html>
