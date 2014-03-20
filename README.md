@@ -1,6 +1,13 @@
-# zQuery
+## zQuery
 
-##核心方法
+这是一个仿 jQuery 的 javascript 库，个人练手性质，不断完善中，欢迎拍砖<br />
+支持浏览器：IE6+，Chrome，Firefox，Opera
+
+###更新记录
+####2013-8-14
+1.在事件绑定中添加return false阻止默认事件和阻止冒泡的功能<br />
+2.修正Ajax方法中没加时间戳的问题
+
 ###核心方法
 ####$(arg)
 说明：转换zQuery对象<br />
@@ -43,7 +50,6 @@ ID选择器		zQuery(“#btn1”)	支持zQuery(“div#title”)的写法<br />
 参数：无<br />
 返回值：第一个元素在同级元素中的序号（num）
 
-##DOM操作
 ###样式
 ####.addClass(sClass)
 说明：给zQuery元素添加对应的class<br />
@@ -221,7 +227,6 @@ bool为假 –> 第一个元素的height+ 上下padding + 上下border宽度
 返回值：符合条件的元素，包装为zQuery对象
 
 
-##网络传输
 ###Ajax
 ####$.ajax(url,json)
 说明：静态方法，封装一系列ajax方法<br />
@@ -243,7 +248,7 @@ bool为假 –> 第一个元素的height+ 上下padding + 上下border宽度
 		 cbName -> 后台接口中回调函数的属性名<br />
 返回值：无
 
-##特效
+
 ###动画
 ####.animate(json,time,[type,fnSucc])
 说明：实现所有zQuery对象的动画效果，支持所有的px属性和opacity <br />
